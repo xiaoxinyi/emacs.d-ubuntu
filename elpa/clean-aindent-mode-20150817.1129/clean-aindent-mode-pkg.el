@@ -1,0 +1,1 @@
+(define-package "clean-aindent-mode" "20150817.1129" "Simple indent and unindent, trims indent whitespace" 'nil 'url: "https://github.com/pmarinov/clean-aindent-mode" :keywords '(" indentation whitespace backspace"))

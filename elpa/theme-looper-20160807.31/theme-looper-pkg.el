@@ -1,0 +1,1 @@
+(define-package "theme-looper" "20160807.31" "Loop thru the available colorthemes"  '((cl-lib "0.5") ) :url "https://github.com/myTerminal/theme-looper" :keywords '("convenience" "color-themes" ))

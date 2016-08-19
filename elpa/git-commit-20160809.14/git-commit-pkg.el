@@ -1,0 +1,1 @@
+(define-package "git-commit" "20160809.14" "Edit Git commit messages" '((dash "20151021.113") (emacs "24.4") (with-editor "20160408.201")) 'url: "https://github.com/magit/magit" :keywords '(" git tools vc"))

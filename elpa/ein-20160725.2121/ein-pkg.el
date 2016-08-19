@@ -1,0 +1,1 @@
+(define-package "ein" "20160725.2121" "IPython notebook client in Emacs"  'nil  :url "https://github.com/millejoh/emacs-ipython-notebook" :keywords '("applications" "tools" ))

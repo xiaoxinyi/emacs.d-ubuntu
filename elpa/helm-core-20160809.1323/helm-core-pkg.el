@@ -1,0 +1,1 @@
+(define-package "helm-core" "20160809.1323"   "Development files for Helm"   '((emacs "24.3")     (async "1.9"))   :url "https://emacs-helm.github.io/helm/")

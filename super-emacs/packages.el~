@@ -1,0 +1,98 @@
+;Create repositories cache, if required
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+;Declare a list of required packages
+(defvar super-emacs--required-packages
+  '(use-package
+    helm
+    multiple-cursors
+    ace-jump-mode
+    powerline
+    switch-window
+    buffer-move
+    auto-complete
+    ztree
+    undo-tree
+    material-theme
+    meta-presenter
+    myterminal-controls
+    theme-looper))
+
+;Install required packages
+(mapc (lambda (p)
+        (package-install p))
+      super-emacs--required-packages)
+
+;;Load default auto-complete configs
+(use-package auto-complete
+  :config
+  (ac-config-default))
+
+
+;;Start undo-tree
+(use-package undo-tree
+  :bind (("M-/" . undo-tree-visualize))
+  :config
+(global-undo-tree-mode))
+
+(use-package ace-jump-mode
+  :commands ace-jump-mode
+  :init
+  (bind-key "C-." 'ace-jump-mode))
+
+;Enable powerline
+(use-package powerline
+  :config
+  (powerline-center-theme)
+  ;(setq powerline-default-separator 'wave)
+)
+
+
+;;Configure theme-looper
+(use-package theme-looper
+  :bind (("C-\"" . theme-looper-enable-next-theme))
+  :config
+  (theme-looper-set-theme-set '(deeper-blue
+                                wheatgrass
+                                wombat
+                                material
+                                monokai
+                                solarized-dark
+                                solarized-light))
+  (theme-looper-set-customizations 'powerline-reset))
+
+;Configure myterminal-controls
+(use-package myterminal-controls
+  :commands myterminal-controls-open-controls
+  :bind (("C-M-'" . myterminal-controls-open-controls))
+  :config
+  (myterminal-controls-set-controls-data
+   '(("t" "Change color theme" theme-looper-enable-next-theme)
+     ("r" "Reload file" super-emacs-reload-current-file))))
+
+;; config 
+(use-package helm
+  :init
+  :bind (("M-x" . helm-M-x)
+    ("C-x b" . helm-mini)
+    ("C-x C-b" . helm-buffers-list)
+    ("C-x C-f" . helm-find-files)
+    ("C-x C-r" . helm-recentf)
+    ("M-y" . helm-show-kill-ring)
+    ("C-c h" . helm-command-prefix)
+  :map helm-map
+  ;("<tab>" . helm-execute-persistent-action)
+  ("C-j" .  helm-execute-persistent-action)
+  ("C-z" . helm-select-action))
+  :config
+  (helm-mode 1)
+  (helm-autoresize-mode t)
+  (setq helm-split-window-in-side-p t
+        ;helm-move-to-line-cycle-in-source t
+        helm-ff-file-name-history-use-recentf t
+        helm-ff-search-library-in-sexp t)
+  (use-package helm-ag
+    :ensure t)
+  (use-package helm-config
+    :ensure t))

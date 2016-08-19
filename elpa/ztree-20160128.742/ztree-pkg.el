@@ -1,0 +1,1 @@
+(define-package "ztree" "20160128.742" "Text mode directory tree * lexicalbinding: t *"  '((cl-lib "0") ) :url "https://github.com/fourier/ztree" :keywords '("files tools" ))

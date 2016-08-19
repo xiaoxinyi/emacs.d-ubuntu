@@ -1,0 +1,1 @@
+(define-package "meta-presenter" "20160807.31" "A simple multifile presentation tool for Emacs" 'nil 'url: "https://github.com/myTerminal/meta-presenter" :keywords '(" productivity" " presentation"))
