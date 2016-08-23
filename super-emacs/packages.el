@@ -239,6 +239,7 @@
 
 (use-package elpy
   :ensure t
+  :bind(("M-<RET>" . elpy-shell-send-current-statement))
   :config
   ;;  (define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
   (require 'elpy)
@@ -249,7 +250,7 @@
   ;;(setq elpy-rpc-backend "jedi")
   (setq elpy-rpc-backend "jedi")
 
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+;; (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
   (defun zl/switch-to-python3 ()
     (interactive)
     (setq elpy-rpc-python-command "/home/sxwl1070/anaconda3/bin/python3")
@@ -272,3 +273,17 @@
   (require 'ein)
   (setq ein:use-auto-complete-superpack t)
   (setq ein:use-smartrep t))
+
+
+;; helm-etags-plus
+(add-to-list 'load-path "~/.emacs.d/elpa/helm-etags-plus")
+
+;; helm-etags+.el
+(setq tags-table-list '("~/zhangli/dl-data/ImageNet_Utils/TAGS"))
+;; ctags-update.el
+(autoload 'turn-on-ctags-auto-update-mode "ctags-update" "turn on 'ctags-auto-update-mode'." t)
+(add-hook 'c-mode-common-hook  'turn-on-ctags-auto-update-mode)
+(add-hook 'python-mode-hook 'turn-on-ctags-auto-update-mode)
+(add-hook 'emacs-lisp-mode-hook  'turn-on-ctags-auto-update-mode)
+(autoload 'ctags-update "ctags-update" "update TAGS using ctags" t)
+(global-set-key "\C-cE" 'ctags-update)

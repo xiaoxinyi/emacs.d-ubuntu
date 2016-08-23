@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/zhangli/dl-data/ImageNet_Utils/" "~/zhangli/dl-docker/")
+("~/zhangli/dl-data/char-rnn/" "~/.emacs.d/" "~/zhangli/dl-data/ImageNet_Utils/" "~/zhangli/dl-docker/")

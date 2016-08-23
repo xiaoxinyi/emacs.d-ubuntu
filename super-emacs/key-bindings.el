@@ -55,6 +55,13 @@
                   (cdr pair)))
 
 
+
+
+
+(mapc 'super-emacs-apply-keyboard-bindings
+      super-emacs--my-keyboard-bindings)
+
+
 ;;; View tags other window
 (defun view-tag-other-window (tagname &optional next-p regexp-p)
   "Same as `find-tag-other-window' but doesn't move the point"
@@ -62,8 +69,4 @@
   (let ((window (get-buffer-window)))
     (find-tag-other-window tagname next-p regexp-p)
     (recenter 0)
-        (select-window window)))'")
-
-
-(mapc 'super-emacs-apply-keyboard-bindings
-      super-emacs--my-keyboard-bindings)
+        (select-window window)))
