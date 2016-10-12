@@ -1,0 +1,14 @@
+/etc/openvpn/server.conf
+/etc/openvpn/#server.conf#
+/home/sxwl1080/client-configs/base.conf
+/home/sxwl1080/client-configs/#base.conf#
+/etc/openvpn/update-resolv-conf
+/etc/openvpn/#update-resolv-conf#
+/home/sxwl1080/client-configs/make_config.sh
+/home/sxwl1080/client-configs/#make_config.sh#
+/etc/default/ufw
+/etc/default/#ufw#
+/etc/ufw/before.rules
+/etc/ufw/#before.rules#
+/etc/sysctl.conf
+/etc/#sysctl.conf#
