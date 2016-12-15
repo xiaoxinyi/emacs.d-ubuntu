@@ -287,3 +287,7 @@
 (add-hook 'emacs-lisp-mode-hook  'turn-on-ctags-auto-update-mode)
 (autoload 'ctags-update "ctags-update" "update TAGS using ctags" t)
 (global-set-key "\C-cE" 'ctags-update)
+
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)))

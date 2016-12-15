@@ -29,8 +29,8 @@
         (t (message "You're not editing a file!"))))
 
 ;Disable splash message, start *scratch* buffer by default
-(setq initial-buffer-choice 
-      t)
+;; (setq initial-buffer-choice t)
+(setq inhibit-startup-message t)
 (setq initial-scratch-message 
       "")
 
